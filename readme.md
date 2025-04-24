@@ -7,3 +7,5 @@
 - Este repositório possui os exercícios propostos da lista de exercícios 2 da disciplina de Poo
 
 - Para executar o programa (Classe App.java), digite "gradle run" (sem aspas duplas) dentro da pasta raíz do projeto.
+
+- Link para acesso da algs4: https://github.com/emersonmello/algs4/releases
