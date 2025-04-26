@@ -17,9 +17,12 @@ public class Navio {
 
     // Constantes
     private final String[] navios = {"P", "E", "C", "S", "N"};
+    private final String[] nomesNavios = {"Porta-aviões", "Encouraçado", "Cruzador",
+                                          "Submarino", "Contratorpedeiro"};
     
     // Atributos
     private String simbolo;
+    private String nomeNavio;
     private int tamanho;
     private boolean orientacao; // true - vertical e false horizontal
     private double [] posicao;
@@ -28,6 +31,7 @@ public class Navio {
 
         if(validaEntrada(numeroSimbolo)){
             this.simbolo = navios[numeroSimbolo - 1];
+            this.nomeNavio = nomesNavios[numeroSimbolo - 1];
             this.tamanho = setTamanho(simbolo);
             this.orientacao = orientacao;
 
@@ -69,17 +73,16 @@ public class Navio {
         double x0 = grade.getCX();
         double y0 = grade.getCY();
 
-        if(this.posicao[0] + this.tamanho > 9 || this.posicao[1] + this.tamanho > 9){
-            System.out.println("Passou da borda");
-            return;
-        }
-
-
         for(int i = 0; i < this.tamanho; i++){
 
             double cx, cy;
 
             if(this.orientacao){ // true é vertical
+
+                if(this.posicao[1] + this.tamanho > 10){
+                    avisoLimiteDeBorda();
+                    return;
+                }
 
                 cx = x0 + this.posicao[0] * 40.0 + 20.0;
                 cy = y0 + (this.posicao[1] + i) * 40.0 + 20.0;
@@ -87,6 +90,11 @@ public class Navio {
             }
             
             else { // false é horizontal
+
+                if(this.posicao[0] + this.tamanho > 10){
+                    avisoLimiteDeBorda();
+                    return;
+                }
 
                 cx = x0 + (this.posicao[0] + i) * 40.0 + 20.0;
                 cy = y0 + this.posicao[1] * 40.0 + 20.0;
@@ -96,6 +104,12 @@ public class Navio {
             tab.setPenColor(Color.red);
             tab.filledSquare(cx, cy, 19.125);
         }
+
+    }
+
+    private void avisoLimiteDeBorda(){
+
+        System.out.println("Navio " + this.nomeNavio + " passou da borda");
 
     }
 }

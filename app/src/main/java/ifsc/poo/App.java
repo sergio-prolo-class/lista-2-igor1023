@@ -31,7 +31,7 @@ public class App {
         Grade grade = new Grade(100, 100);
         grade.desenhar(app.draw);
 
-        double[] pos = {5, 3};
+        double[] pos = {6, 2};
         Navio navio = new Navio(1, false, pos);
         navio.desenhar(app.draw, grade);
         app.draw.show();
