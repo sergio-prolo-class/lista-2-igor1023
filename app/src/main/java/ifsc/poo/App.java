@@ -28,11 +28,9 @@ public class App {
     public static void main(String[] args) {
         
         App app = new App();
-        //Grade.desenhar(app.draw, 100, 100);
-        Grade.desenhar(app.draw);
+        Grade grade = new Grade(100, 100);
+        grade.desenhar(app.draw);
         app.draw.show();
-
-
 
     }
 }
