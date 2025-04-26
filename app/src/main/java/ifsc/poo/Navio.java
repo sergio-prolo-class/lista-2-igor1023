@@ -6,13 +6,15 @@ import edu.princeton.cs.algs4.Draw;
 
 public class Navio {
     
-    /*  Lista de navios do jogo Batalha Naval
-        Navio           Tamanho (casas)     Símbolo
-        Porta-aviões        5                   P
-        Encouraçado         4                   E
-        Cruzador            3                   C
-        Submarino           3                   S
-        Contratorpedeiro    2                   N
+    /*  
+        Lista de navios do jogo Batalha Naval
+
+        Navio            | Tamanho (casas) | Símbolo | Nº do navio para criar no código (App)
+        Porta-aviões     |      5          |    P    |               1
+        Encouraçado      |      4          |    E    |               2
+        Cruzador         |      3          |    C    |               3
+        Submarino        |      3          |    S    |               4
+        Contratorpedeiro |      2          |    N    |               5
     */
 
     // Constantes
@@ -20,13 +22,20 @@ public class Navio {
     private final String[] nomesNavios = {"Porta-aviões", "Encouraçado", "Cruzador",
                                           "Submarino", "Contratorpedeiro"};
     
-    // Atributos
+    // Atributos do Objeto
     private String simbolo;
     private String nomeNavio;
     private int tamanho;
-    private boolean orientacao; // true - vertical e false horizontal
+    private boolean orientacao; // true = vertical e false = horizontal
     private double [] posicao;
-    
+
+    // Atributos da classe
+    // Fiz pensando caso fosse obrigatório validar o tabuleiro e posição dos navios
+    private boolean[] navioDesenhado = new boolean[5];
+    private boolean temNavioNaHorizontal = false;
+    private boolean temNavioNaVertical = false;
+    private byte quantidadeNavioDesenhado = 0;
+
     public Navio(int numeroSimbolo, boolean orientacao, double [] pos){
 
         if(validaEntrada(numeroSimbolo)){
@@ -37,6 +46,8 @@ public class Navio {
 
             if(validaPosicao(pos))
                 this.posicao = pos;
+            
+            this.navioDesenhado[numeroSimbolo - 1] = true;
 
         } else System.out.println("Entradas inválidas");
     }
@@ -86,6 +97,7 @@ public class Navio {
 
                 cx = x0 + this.posicao[0] * 40.0 + 20.0;
                 cy = y0 + (this.posicao[1] + i) * 40.0 + 20.0;
+                this.temNavioNaVertical = true;                
 
             }
             
@@ -98,11 +110,14 @@ public class Navio {
 
                 cx = x0 + (this.posicao[0] + i) * 40.0 + 20.0;
                 cy = y0 + this.posicao[1] * 40.0 + 20.0;
+                this.temNavioNaHorizontal = true;
 
             }
 
             tab.setPenColor(Color.red);
             tab.filledSquare(cx, cy, 19.125);
+            this.quantidadeNavioDesenhado++;
+            
         }
 
     }

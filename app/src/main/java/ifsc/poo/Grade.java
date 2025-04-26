@@ -6,7 +6,8 @@ import edu.princeton.cs.algs4.Draw;
 
 public class Grade{
 
-    private double x0, y0;
+    // Atributos do objeto
+    private final double x0, y0;
 
     public Grade(double x, double y){
 
@@ -55,6 +56,10 @@ public class Grade{
         for(int i = 0; i < 10; i ++){
             
             double cx = x0 + i * 40 + 20;
+            // +20 pois draw posiciona square pelo seu centro cy
+            // +20 representa a metade de cada lado do square (20 = metade de 40)
+            // Multiplicar por 40 é o espaçamento entre cada square da grade
+
             grade.text(cx, this.y0 - 20, (numero++) + "", 20);
 
         }
@@ -62,13 +67,18 @@ public class Grade{
         for(int i = 0; i < 10; i ++){
 
             double cy = this.y0 + i * 40 + 20;
+            // +20 pois draw posiciona square pelo seu centro cy
+            // +20 representa a metade de cada lado do square (20 = metade de 40)
+            // Multiplicar por 40 é o espaçamento entre cada square da grade
+
             grade.text(this.x0 - 20, cy, (letra++) + "", 20);
 
         }
 
-        // Subtrair 20 em ambos os for para deslocar, respectivamente,
-        // As letras para esquerda e os números para baixo;
-        // Isto é, deslocamento de 20 pixels para esquerda e para baixo.
+        // Subtrair 20 em ambos grade.text para deslocar, respectivamente,
+        // as letras para esquerda e os números para baixo;
+        // isto é, deslocamento de 20 pixels para esquerda e para baixo.
+        // Multiplicar por 40 é o espaçamento entre cada square da grade
 
     }
 
