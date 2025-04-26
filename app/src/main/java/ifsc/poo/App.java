@@ -25,8 +25,43 @@ public class App {
 
     }
 
+    public static void testarEtapa1(){
+
+        App app1 = new App();
+        app1.draw.show();
+
+    }
+
+    public static void testarEtapa2(){
+
+        App app2 = new App();
+        Grade grade = new Grade(100, 100);
+        grade.desenhar(app2.draw);
+        app2.draw.show();
+
+    }
+
+    public static void testarEtapa3(){
+
+        App app3 = new App();
+        Grade grade = new Grade(100, 100);
+        grade.desenhar(app3.draw);
+
+        double[] pos = {3, 2};
+        Navio navio = new Navio(1, false, pos);
+        navio.desenhar(app3.draw, grade);
+        app3.draw.show();
+
+
+    }
+
     public static void main(String[] args) {
         
+        // testarEtapa1();
+        // testarEtapa2();
+        // testarEtapa3();
+        // testarEtapa4();
+
         App app = new App();
         Grade grade = new Grade(100, 100);
         grade.desenhar(app.draw);
@@ -35,6 +70,6 @@ public class App {
         Navio navio = new Navio(1, false, pos);
         navio.desenhar(app.draw, grade);
         app.draw.show();
-
+        
     }
 }
