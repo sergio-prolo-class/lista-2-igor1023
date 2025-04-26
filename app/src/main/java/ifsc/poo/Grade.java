@@ -15,6 +15,18 @@ public class Grade{
 
     }
 
+    public double getCX(){
+
+        return this.x0;
+
+    }
+
+    public double getCY(){
+
+        return this.y0;
+
+    }
+
     public void desenhar(Draw grade){
 
         double cx, cy;
@@ -39,7 +51,6 @@ public class Grade{
 
         char letra = 'A';
         char numero = '0';
-
 
         for(int i = 0; i < 10; i ++){
             
