@@ -116,9 +116,15 @@ public class Navio {
             }
 
             tab.setPenColor(Color.red);
-            tab.filledSquare(cx, cy, 19.125);
+            tab.filledSquare(cx, cy, (PIXEL / 2.0) - 0.5); 
             this.quantidadeNavioDesenhado++;
             
+            /*
+             * Em tab.filledSquare(cx, cy, (PIXEL / 2.0) - 0.5), o último argumento,
+             * referente ao tamanho, não coloquei metade do PIXEL (metade de 40) para
+             * que o preenchimento do quadrado não sobreponha as linhas da grade.
+             * Coloquei a metade do PIXEL e subtraí um pequeno valor. 
+            */
         }
 
     }
