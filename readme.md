@@ -38,6 +38,7 @@ grade = new Grade(100, 100);
 
 - Ao inicializar um objeto da classe Navio, utiliza-se o método construtor para definir as seguintes caracterísitcas do navio: símbolo, orientação (horizontal ou vertical) e a posição;
 - Para definir o tipo, utiliza-se números de 1 a 5 conforme a tabela abaixo:
+
 |       Navio      | Tamanho (casas) | Símbolos | Nº do navio para utilizar nos argumentos (App) |
 |------------------------------------------------------------------------------------------------|
 |Porta-aviões      |        5        |    P     |                    1                           |
@@ -45,8 +46,6 @@ grade = new Grade(100, 100);
 |Cruzador          |        3        |    C     |                    3                           |
 |Submarino         |        3        |    S     |                    4                           |
 |Contratorpedeiro  |        2        |    N     |                    5                           |
-|------------------------------------------------------------------------------------------------|
-
 
 - Para definir a orientação, utiliza-se um boolean:
 \\ true = vertical;
@@ -67,6 +66,7 @@ Obs.: poderia ser um STRING ou CHAR para representar a orientação, mas preferi
 
 - Ao inicializar um objeto da classe Navio, utiliza-se o método construtor para definir as seguintes caracterísitcas do navio: símbolo, orientação (horizontal ou vertical) e a posição;
 - Para definir o tipo, utiliza-se números de 1 a 5 conforme a tabela abaixo:
+
 |       Navio      | Tamanho (casas) | Símbolos | Nº do navio para utilizar nos argumentos (App) |
 |------------------------------------------------------------------------------------------------|
 |Porta-aviões      |        5        |    P     |                    1                           |
@@ -74,8 +74,6 @@ Obs.: poderia ser um STRING ou CHAR para representar a orientação, mas preferi
 |Cruzador          |        3        |    C     |                    3                           |
 |Submarino         |        3        |    S     |                    4                           |
 |Contratorpedeiro  |        2        |    N     |                    5                           |
-|------------------------------------------------------------------------------------------------|
-
 
 - Para definir a orientação, utiliza-se um boolean:
 \\ true = vertical;
