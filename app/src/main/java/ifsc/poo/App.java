@@ -7,6 +7,12 @@ import edu.princeton.cs.algs4.Draw;
 
 public class App {
     
+    // Constantes
+    private final int LARGURA = 1000;
+    private final int ALTURA = 600;
+    private final int INICIO_ESCALA = 0;
+
+    // Atributos
     Draw draw;
 
     public App(){
@@ -15,13 +21,13 @@ public class App {
         this.draw.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 
         // Ajusta o tamanho da tela usando algum método do objeto Draw
-        this.draw.setCanvasSize(1000, 600);
+        this.draw.setCanvasSize(LARGURA, ALTURA);
 
         // Ajusta a escala X usando algum outro método do objeto Draw
-        this.draw.setXscale(0.0f, 1000.0f);
+        this.draw.setXscale(INICIO_ESCALA, LARGURA);
 
         // Ajusta a escala Y usando ainda outro método do objeto Draw
-        this.draw.setYscale(0.0f, 600.0f);
+        this.draw.setYscale(INICIO_ESCALA, ALTURA);
 
     }
 
@@ -97,7 +103,7 @@ public class App {
         // dentro da pasta raíz do projeto (clone do repositório)
 
         // testarEtapa1();
-         //testarEtapa2();
+        //testarEtapa2();
         // testarEtapa3();
          testarEtapa4();
 

@@ -18,6 +18,7 @@ public class Navio {
     */
 
     // Constantes
+    private final double PIXEL = 40.0;
     private final String[] navios = {"P", "E", "C", "S", "N"};
     private final String[] nomesNavios = {"Porta-aviões", "Encouraçado", "Cruzador",
                                           "Submarino", "Contratorpedeiro"};
@@ -95,8 +96,8 @@ public class Navio {
                     return;
                 }
 
-                cx = x0 + this.posicao[0] * 40.0 + 20.0;
-                cy = y0 + (this.posicao[1] + i) * 40.0 + 20.0;
+                cx = x0 + this.posicao[0] * PIXEL + (PIXEL / 2.0);
+                cy = y0 + (this.posicao[1] + i) * PIXEL + (PIXEL / 2.0);
                 this.temNavioNaVertical = true;                
 
             }
@@ -108,8 +109,8 @@ public class Navio {
                     return;
                 }
 
-                cx = x0 + (this.posicao[0] + i) * 40.0 + 20.0;
-                cy = y0 + this.posicao[1] * 40.0 + 20.0;
+                cx = x0 + (this.posicao[0] + i) * PIXEL + (PIXEL / 2.0);
+                cy = y0 + this.posicao[1] * PIXEL + (PIXEL / 2.0);
                 this.temNavioNaHorizontal = true;
 
             }

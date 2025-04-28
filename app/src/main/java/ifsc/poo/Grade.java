@@ -6,6 +6,9 @@ import edu.princeton.cs.algs4.Draw;
 
 public class Grade{
 
+    // Constante
+    private final double PIXEL = 40.0;
+
     // Atributos do objeto
     private final double x0, y0;
 
@@ -36,10 +39,10 @@ public class Grade{
 
             for(int j = 0; j < 10; j++){
 
-                cy = y0 + i * 40 + 20;
-                cx = x0 + j * 40 + 20;
+                cy = y0 + i * PIXEL + (PIXEL / 2.0);
+                cx = x0 + j * PIXEL + (PIXEL / 2.0);
                 grade.setPenColor(Color.black); // Cor do tabuleiro é preto
-                grade.square(cx, cy, 20.0f);
+                grade.square(cx, cy, (PIXEL / 2.0));
 
             }
         }
@@ -55,23 +58,23 @@ public class Grade{
 
         for(int i = 0; i < 10; i ++){
             
-            double cx = x0 + i * 40 + 20;
+            double cx = this.x0 + i * PIXEL + (PIXEL / 2);
             // +20 pois draw posiciona square pelo seu centro cy
             // +20 representa a metade de cada lado do square (20 = metade de 40)
             // Multiplicar por 40 é o espaçamento entre cada square da grade
 
-            grade.text(cx, this.y0 - 20, (numero++) + "", 20);
+            grade.text(cx, this.y0 - 20, (numero++) + "", (int) (PIXEL / 2)); // cast para nao rotacionar
 
         }
 
         for(int i = 0; i < 10; i ++){
 
-            double cy = this.y0 + i * 40 + 20;
+            double cy = this.y0 + i * PIXEL + (PIXEL / 2);
             // +20 pois draw posiciona square pelo seu centro cy
             // +20 representa a metade de cada lado do square (20 = metade de 40)
             // Multiplicar por 40 é o espaçamento entre cada square da grade
 
-            grade.text(this.x0 - 20, cy, (letra++) + "", 20);
+            grade.text(this.x0 - (PIXEL / 2), cy, (letra++) + "", (int) (PIXEL / 2)); // cast para nao rotacionar
 
         }
 
