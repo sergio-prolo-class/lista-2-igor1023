@@ -40,12 +40,12 @@ grade = new Grade(100, 100);
 - Para definir o tipo, utiliza-se números de 1 a 5 conforme a tabela abaixo:
 
 |       Navio      | Tamanho (casas) | Símbolos | Nº do navio para utilizar nos argumentos (App) |
-|------------------------------------------------------------------------------------------------|
-|Porta-aviões      |        5        |    P     |                    1                           |
-|Encouraçado       |        4        |    E     |                    2                           |
-|Cruzador          |        3        |    C     |                    3                           |
-|Submarino         |        3        |    S     |                    4                           |
-|Contratorpedeiro  |        2        |    N     |                    5                           |
+| ---              | ---             | ---      | ---                                            |
+|Porta-aviões      | 5               | P        | 1                                              |
+|Encouraçado       | 4               | E        | 2                                              |
+|Cruzador          | 3               | C        | 3                                              |
+|Submarino         | 3               | S        | 4                                              |
+|Contratorpedeiro  | 2               | N        | 5                                              |
 
 - Para definir a orientação, utiliza-se um boolean:
 \\ true = vertical;
