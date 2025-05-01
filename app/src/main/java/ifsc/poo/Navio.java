@@ -116,14 +116,25 @@ public class Navio {
             }
 
             tab.setPenColor(Color.red);
-            tab.filledSquare(cx, cy, (PIXEL / 2.0) - 0.5); 
+            tab.filledSquare(cx, cy, PIXEL / 2.0);
+
+            tab.setPenColor(Color.black);
+            tab.square(cx, cy, PIXEL / 2.0) ;
+            
             this.quantidadeNavioDesenhado++;
             
-            /*
-             * Em tab.filledSquare(cx, cy, (PIXEL / 2.0) - 0.5), o último argumento,
+            /* 
+             * Testei duas possibilidades de a cor vermelho não sobrepor as linhas:
+             * 
+             * 1) Em tab.filledSquare(cx, cy, (PIXEL / 2.0) - 0.5), no último argumento,
              * referente ao tamanho, não coloquei metade do PIXEL (metade de 40) para
              * que o preenchimento do quadrado não sobreponha as linhas da grade.
              * Coloquei a metade do PIXEL e subtraí um pequeno valor. 
+             * 
+             * 2) Em tab.filledSquare(cx, cy, PIXEL / 2.0), será preenchido todo o quadrado,
+             * inclusive as linhas, porém depois eu altero a cor do Draw tab para black e, por 
+             * fim, desenho um quadrado sem cor de fundo na mesma coordenada que acabou de ser 
+             * preenchida.
             */
         }
 
