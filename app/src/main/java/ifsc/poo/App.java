@@ -3,12 +3,109 @@
  */
 package ifsc.poo;
 
+import edu.princeton.cs.algs4.Draw;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    
+    // Constantes
+    private final int LARGURA = 1000;
+    private final int ALTURA = 600;
+    private final int INICIO_ESCALA = 0;
+
+    // Atributos
+    Draw draw;
+
+    public App(){
+
+        this.draw = new Draw();
+        this.draw.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+        // Ajusta o tamanho da tela usando algum método do objeto Draw
+        this.draw.setCanvasSize(LARGURA, ALTURA);
+
+        // Ajusta a escala X usando algum outro método do objeto Draw
+        this.draw.setXscale(INICIO_ESCALA, LARGURA);
+
+        // Ajusta a escala Y usando ainda outro método do objeto Draw
+        this.draw.setYscale(INICIO_ESCALA, ALTURA);
+
+    }
+
+    public static void testarEtapa1(){
+
+        App app1 = new App();
+        app1.draw.show();
+
+    }
+
+    public static void testarEtapa2(){
+
+        App app2 = new App();
+        Grade grade = new Grade(100, 100);
+        grade.desenhar(app2.draw);
+        app2.draw.show();
+
+    }
+
+    public static void testarEtapa3(){
+
+        App app3 = new App();
+        Grade grade = new Grade(100, 100);
+        grade.desenhar(app3.draw);
+
+        double[] pos = {3, 2};
+        Navio navio = new Navio(1, false, pos);
+        navio.desenhar(app3.draw, grade);
+        app3.draw.show();
+
+
+    }
+
+    public static void testarEtapa4(){
+
+        App app = new App();
+        Grade grade = new Grade(50, 100);
+        grade.desenhar(app.draw);
+
+        double[] pos1 = {3, 2};
+        Navio navio1 = new Navio(1, true, pos1);
+        navio1.desenhar(app.draw, grade);
+
+        double[] pos2 = {0, 0};
+        Navio navio2 = new Navio(2, false, pos2);
+        navio2.desenhar(app.draw, grade);
+
+        double[] pos3 = {5, 1};
+        Navio navio3 = new Navio(3, true, pos3);
+        navio3.desenhar(app.draw, grade);
+
+        double[] pos4 = {7, 6};
+        Navio navio4 = new Navio(4, true, pos4);
+        navio4.desenhar(app.draw, grade);
+
+        double[] pos5 = {1, 8};
+        Navio navio5 = new Navio(5, false, pos5);
+        navio5.desenhar(app.draw, grade);
+
+        Grade grade2 = new Grade(550, 100);
+        grade2.desenhar(app.draw);
+
+        app.draw.show();
+
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        
+        // Descomente o "chamamento" dos métodos abaixo para
+        // testar o que deseja.
+        // Obs.: sugere-se testar uma etapa por vez
+        // Execute com "./gradle run" ou "gradle run" no terminal
+        // dentro da pasta raíz do projeto (clone do repositório)
+
+        // testarEtapa1();
+        //testarEtapa2();
+        // testarEtapa3();
+         testarEtapa4();
+
     }
 }
