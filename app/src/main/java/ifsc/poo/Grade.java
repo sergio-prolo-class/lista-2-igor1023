@@ -8,6 +8,7 @@ public class Grade{
 
     // Constante
     private final double PIXEL = 40.0;
+    private final int LIMITE_TAB = 10; // Limite do tabuleiro (10 x 10)
 
     // Atributos do objeto
     private final double x0, y0;
@@ -35,9 +36,9 @@ public class Grade{
 
         double cx, cy;
 
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < LIMITE_TAB; i++) {
 
-            for(int j = 0; j < 10; j++){
+            for(int j = 0; j < LIMITE_TAB; j++){
 
                 cy = y0 + i * PIXEL + (PIXEL / 2.0);
                 cx = x0 + j * PIXEL + (PIXEL / 2.0);
@@ -56,7 +57,7 @@ public class Grade{
         char letra = 'A';
         char numero = '0';
 
-        for(int i = 0; i < 10; i ++){
+        for(int i = 0; i < LIMITE_TAB; i ++){
             
             double cx = this.x0 + i * PIXEL + (PIXEL / 2);
             // +20 pois draw posiciona square pelo seu centro cy
@@ -67,7 +68,7 @@ public class Grade{
 
         }
 
-        for(int i = 0; i < 10; i ++){
+        for(int i = 0; i < LIMITE_TAB; i ++){
 
             double cy = this.y0 + i * PIXEL + (PIXEL / 2);
             // +20 pois draw posiciona square pelo seu centro cy
